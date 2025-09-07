@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carlos & Elvia — Comparte tus fotos</title>
+  <meta name="description" content="Sube tus fotos y vídeos de la boda. Toca el botón de cámara para añadir archivos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#ff6b6b;
+      --bg:#fff;
+      --muted:#7a7a7a;
+      --shadow:0 10px 30px rgba(0,0,0,.12);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#111;}
+    .hero{position:relative;overflow:hidden;border-bottom-left-radius:30px;border-bottom-right-radius:30px}
+    .hero img{width:100%;height:210px;object-fit:cover;display:block;filter:saturate(1.05)}
+    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.45));}
+    .hero .title{position:absolute;left:16px;bottom:16px;color:#fff}
+    .title h1{margin:0;font-size:26px}
+    .title p{margin:4px 0 0;font-size:14px;opacity:.9}
+    .wrap{max-width:920px;margin:0 auto;padding:18px}
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .muted{color:var(--muted)}
+    .tabbar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #eee;display:flex;justify-content:space-around;align-items:center;height:70px;padding:0 12px;z-index:50}
+    .tabbar a{color:#444;text-decoration:none;font-size:12px;display:flex;flex-direction:column;align-items:center;gap:6px}
+    .cam-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:38px;z-index:60}
+    .cam-fab a{display:inline-flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:50%;background:var(--primary);color:#fff;text-decoration:none;box-shadow:0 16px 42px rgba(255,107,107,.45);font-size:28px}
+    .cam-fab a:active{transform:translateX(-50%) scale(.98)}
+    .embed{margin-top:16px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+    .embed iframe{width:100%;height:70vh;border:0}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop" alt="Carlos & Elvia"/>
+    <div class="overlay"></div>
+    <div class="title">
+      <h1>Carlos & Elvia 🥑🧉</h1>
+      <p>02/01/2026 · Comparte tus fotos y vídeos</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2 style="margin:4px 0 6px">¡Sube tus recuerdos!</h2>
+      <p class="muted">Toca el botón de cámara para abrir directamente el formulario y usar el botón <b>Agregar archivo</b>.</p>
+    </section>
+
+    <section class="embed" aria-label="Formulario embebido">
+      <iframe src="https://forms.gle/6uR7orAWpHr4evri7?embedded=true" allow="camera; microphone" title="Formulario: comparte tus fotos y vídeos"></iframe>
+    </section>
+  </main>
+
+  <div class="cam-fab">
+    <a href="https://forms.gle/6uR7orAWpHr4evri7" target="_blank" rel="noopener" aria-label="Subir fotos y vídeos">📷</a>
+  </div>
+
+  <nav class="tabbar" aria-label="Navegación">
+    <a href="#"><span>❤️</span><span>Deseos</span></a>
+    <a href="#"><span>💬</span><span>Mensajes</span></a>
+    <a href="#"><span>📚</span><span>Libro</span></a>
+    <a href="#"><span>👤</span><span>Perfil</span></a>
+  </nav>
+</body>
+</html>
